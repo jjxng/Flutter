@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'color_schemes.g.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,11 +14,12 @@ class MyApp extends StatelessWidget {   // 여기서 테마 선언
       title: 'Flutter Demo',
       // theme: ThemeData.dark(),
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        // useMaterial3: true,
+        useMaterial3: true, colorScheme: lightColorScheme,
         // 선택되지 않은 라디오 버튼 색깔
-        unselectedWidgetColor: Colors.green,
-        scaffoldBackgroundColor: Colors.yellow[50],
+        // unselectedWidgetColor: Colors.green,
+        // scaffoldBackgroundColor: Colors.yellow[50],
         fontFamily: 'D2Coding',
         textTheme: const TextTheme(
           bodyMedium: TextStyle(
@@ -29,6 +31,7 @@ class MyApp extends StatelessWidget {   // 여기서 테마 선언
           ),
         ),
       ),
+      // darkTheme: ThemeData(useMaterial3: true, colorScheme: darkColorScheme),
       home: const MyHomePage(title: 'ex18_theme'),
     );
   }
@@ -55,6 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        elevation: 5,  // 상단바 그림자 옵션
         title: Text(widget.title),
       ),
       body: Center(
